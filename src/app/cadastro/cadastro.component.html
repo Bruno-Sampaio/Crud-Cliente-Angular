@@ -1,0 +1,34 @@
+<div>
+
+    <form [formGroup]="formClient" (ngSubmit)="signUp()">
+
+        <div class="form-group">
+            <label for="">Nome</label>
+            <input type="text" formControlName="nome" id="nome" class="form-control">
+        </div>
+    
+        <div class="form-group">
+            <label for="" class="label">Email</label>
+            <input type="text" formControlName="email" id="email" class="form-control">
+        </div>
+    
+        <div class="form-group">
+            <label for="">CPF</label>
+            <input type="number" formControlName="cpf" id="cpf" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="">RG</label>
+            <input type="number" formControlName="rg" id="rg" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">NUMERO DE TELEFONE</label>
+            <input type="number" formControlName="numeroCelular" id="numero-celular" class="form-control">
+        </div>
+
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+    
+    </div>
