@@ -9,10 +9,11 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms'
 
 export class CadastroComponent implements OnInit {
 
-  public formClient: FormGroup;
-  
+  public formCliente: FormGroup;
+  cliente: any = {};
+
   constructor(private formBuilder: FormBuilder) {
-    this.formClient = this.formBuilder.group({
+    this.formCliente = this.formBuilder.group({
       nome: [null, [Validators.required]],
       email: [null, [Validators.required]],
       cpf:[null, [Validators.required]],
@@ -21,9 +22,13 @@ export class CadastroComponent implements OnInit {
     })
   }
 
-  signUp(){
-    console.log(this.formClient.value)
+  onSubmit() {
+    console.log(this.formCliente.value);
+    this.cliente = Object.assign(this.cliente, this.formCliente.value);
+    localStorage.setItem('clientes', JSON.stringify(this.cliente));
   }
+
+  signUp(){}
 
   ngOnInit(): void {
   }
